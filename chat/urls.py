@@ -1,6 +1,6 @@
-from django.urls import path 
-from . import views 
+from .consumer import WebSocketConsumer
+from django.urls import path, include
 
-urlpatterns = [
-    path('', views.lobby)
+websocket_urlpatterns = [
+    path(r'^ui-channel$', WebSocketConsumer),
 ]
